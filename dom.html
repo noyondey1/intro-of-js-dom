@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #second-title{
+            background-color: rgba(210, 105, 30, 0.384);
+        } */
+        /* .blog{
+            border: 2px solid orange;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        } */
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my blog website</h1>
+    </header>
+    <main>
+        <!-- blog section start here -->
+        <section id="blogs" class="blogs">
+            <header>
+                <h2>Blogs list</h2>
+                <ul id="blog-list">
+                    <li>Blog-1</li>
+                    <li>Blog-2</li>
+                    <li>Blog-3</li>
+                    <li>Blog-4</li>
+                </ul>
+            </header>
+            <article class="blog">
+                <h3>My Awesome Blog-1</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt quo minus adipisci blanditiis provident numquam nulla reiciendis. Quo quasi officia neque quidem consequuntur, tempore similique ipsam, est placeat eum repellat?</p>
+            </article>
+            <article id="second-blog" class="blog">
+                <h3 id="second-title">My Awesome Blog-2</h3>
+                <p>Obcaecati id, a doloribus consectetur sed ipsa qui et non quis voluptatum magnam nam mollitia perferendis animi consequuntur in voluptatem quod unde sit, dolores ratione asperiores exercitationem. Sapiente, provident culpa.</p>
+            </article>
+            <article class="blog">
+                <h3 id="third-title">My Awesome Blog-3</h3>
+                <p>Voluptas, temporibus saepe excepturi, maiores sint voluptatibus cupiditate deleniti tempore minima blanditiis libero, eaque ab error officia quas labore facilis. Itaque vel quia vitae officia quaerat incidunt excepturi quod nostrum!</p>
+            </article>
+            <article class="blog">
+                <h3 id="fourth-title">My Awesome Blog-4</h3>
+                <p>Voluptas, temporibus saepe excepturi, maiores sint voluptatibus cupiditate deleniti tempore minima blanditiis libero, eaque ab error officia quas labore facilis. Itaque vel quia vitae officia quaerat incidunt excepturi quod nostrum! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti expedita aliquam itaque hic quo necessitatibus beatae officia laborum quidem quis mollitia consequuntur, numquam sapiente, laboriosam temporibus doloremque veniam voluptatem aliquid.</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        // explore getElementsByTagName
+        const student = {name: 'kismot Ali', age: 16, height: 60}
+        // console.log(document.body);
+        const blogTitles = document.getElementsByTagName('h3');
+        for(const h3 of blogTitles){
+            // console.log(h3.innerText);
+        }
+
+        const blogDetails = document.getElementsByTagName('p');
+        for(const p of blogDetails){
+            // console.log(p.innerText);
+        }
+
+        // explore getElementsById
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.textAlign = 'center';
+        
+        const third = document.getElementById('third-title');
+        // third.style.fontSize = '2rem';
+        third.innerText = 'Title updated by JS'
+        third.style.backgroundColor = 'salmon';
+        // third.style.padding = '2rem'
+        third.style.padding = '10px';
+        third.style.marginLeft = '20px';
+
+        /* const blogs = document.getElementById('blogs');
+        blogs.style.backgroundColor = 'crimson';
+        blogs.style.color = 'white';
+        blogs.style.padding = '2rem';
+        blogs.style.display = 'grid';
+        blogs.style.gridTemplateColumns = '1fr 1fr 1fr 1fr'
+        blogs.style.columnGap = '1rem' */
+
+        
+    
+        // create and add element by using JS
+        // create the element
+        const li = document.createElement('li');
+        li.innerText = 'Blog-5 created by JavaScript';
+        // Where to add
+        const ul = document.getElementById('blog-list');
+        // append new element
+        ul.appendChild(li);
+
+        // add article
+        const article = document.createElement('article');
+        article.classList.add('blog');
+        /* const h3 = document.createElement('h3');
+        h3.innerText = 'My Awesome Blog-5';
+        const p = document.createElement('p');
+        p.innerText = 'Voluptas, temporibus saepe excepturi, maiores sint voluptatibus cupiditate deleniti tempore minima blanditiis libero, eaque ab error officia quas labore facilis.';
+        article.appendChild(h3);
+        article.appendChild(p); */
+
+        article.innerHTML = `
+        <h3>My Awesome Blog-5</h3>
+        <p>Voluptas, temporibus saepe excepturi, maiores sint voluptatibus cupiditate deleniti tempore minima blanditiis libero, eaque ab error officia quas labore facilis.</p>
+        `
+
+        // parent of article
+        const blogSection = document.getElementById('blogs');
+        blogSection.appendChild(article);
+
+        // explore getElementsByClassName
+        const blogs = document.getElementsByClassName('blog')
+        for(const blog of blogs){
+            blog.style.border = '2px solid orange';
+            blog.style.borderRadius = '10px';
+            blog.style.margin = '5px';
+            blog.style.padding = '5px';
+        }
+    </script>
+</body>
+</html>
